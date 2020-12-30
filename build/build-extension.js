@@ -53,6 +53,7 @@ async function buildEntryPoint() {
 function copyAssets() {
   return cpy([
     '*.html',
+    'scripts/background.js',
     'styles/**/*.css',
     'images/**/*',
     'manifest.json',
