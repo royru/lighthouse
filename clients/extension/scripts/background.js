@@ -10,4 +10,18 @@ function openReport(url) {
   window.open(apiUrl.href);
 }
 
-// TODO: write your code here
+chrome.contextMenus.create({title: 'Generate Report', onclick: startReport});
+
+function startReport() {
+  chrome.tabs.query({currentWindow: true}, (tabs) => {
+    // open new window
+    chrome.windows.create({focused: true});
+
+    // generate report for active tab
+    tabs.forEach((tab) => {
+      if (tab.active) {
+        openReport(tab.url);
+      }
+    });
+  });
+}

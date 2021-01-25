@@ -10,7 +10,9 @@
   },
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "tabs",
+    "contextMenus"
   ],
   "background": { "scripts": [ "scripts/background.js"] },
   "browser_action": {
